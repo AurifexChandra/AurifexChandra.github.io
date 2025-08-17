@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AurifexChandra</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="meteor-bg"></div>
+    <header>
+        <nav>
+            <div class="logo">AurifexChandra</div>
+            <div class="social-links">
+                <a href="https://www.artstation.com/" target="_blank" title="ArtStation"><i class="fab fa-artstation"></i></a>
+                <a href="https://twitter.com/" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to My Creative Space</h1>
+            <p>Exploring art, design, and creative thoughts</p>
+        </section>
+
+        <section class="blog-posts">
+            <article class="post">
+                <h2>Latest Post</h2>
+                <div class="post-meta">May 19, 2025</div>
+                <p>Welcome to my new blog! Here I'll be sharing my creative journey, artwork, and thoughts about design.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+    <script>
+    // Meteor shower animation
+    const meteorBg = document.querySelector('.meteor-bg');
+    const meteorCount = 18;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    function randomBetween(a, b) {
+        return Math.random() * (b - a) + a;
+    }
+
+    for (let i = 0; i < meteorCount; i++) {
+        const meteor = document.createElement('div');
+        meteor.classList.add('meteor');
+        // Randomize start and end positions for diagonal movement
+        const startX = randomBetween(-0.2 * vw, 1.1 * vw);
+        const startY = randomBetween(-0.3 * vh, 0.2 * vh);
+        const endX = startX + randomBetween(200, 400);
+        const endY = startY + randomBetween(400, 700);
+        meteor.style.setProperty('--start-x', `${startX}px`);
+        meteor.style.setProperty('--start-y', `${startY}px`);
+        meteor.style.setProperty('--end-x', `${endX}px`);
+        meteor.style.setProperty('--end-y', `${endY}px`);
+        meteor.style.animationDelay = `${randomBetween(0, 2.5)}s`;
+        meteorBg.appendChild(meteor);
+    }
+    </script>
+    </footer>
+</body>
+</html>
