@@ -1,0 +1,242 @@
+:root {
+    --primary-color: #d8dde2;
+    --secondary-color: #526170;
+    --background-color: #0a0c0f;
+    --surface-color: #13161a;
+    --text-color: #c5ccd3;
+    --accent-color: #2a3641;
+    --shadow-color: rgba(0,0,0,0.8);
+    --highlight-color: #384250;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.meteor-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.meteor {
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(120deg, #fff 0%, #7ed6df 100%);
+    opacity: 0.7;
+    border-radius: 2px;
+    filter: blur(0.5px);
+    animation: meteor-shower 2.5s linear infinite;
+}
+
+@keyframes meteor-shower {
+    0% {
+        transform: translate3d(var(--start-x), var(--start-y), 0) rotate(45deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(var(--end-x), var(--end-y), 0) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+header {
+    background-color: var(--surface-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /* Ensure header is above meteors */
+}
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links > a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-links > a:hover,
+.nav-links > a.active {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--highlight-color);
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 2rem;
+    background: transparent;
+    flex: 1 0 auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-shadow: 0 2px 8px #000a;
+}
+.hero p {
+    font-size: 1.2rem;
+    color: #b0b8c1;
+}
+
+.blog-posts {
+    margin-top: 3rem;
+}
+
+.post {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px var(--shadow-color);
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.post h2 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.post-meta {
+    color: #7ed6dfcc;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--surface-color);
+    margin-top: 4rem;
+    color: #b0b8c1;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -2px 8px var(--shadow-color);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem 2rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}

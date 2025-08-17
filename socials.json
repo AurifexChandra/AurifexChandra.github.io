@@ -1,0 +1,17 @@
+[
+  {
+    "name": "ArtStation",
+    "url": "https://www.artstation.com/aurifexchandra",
+    "icon": "fas fa-palette"
+  },
+  {
+    "name": "Twitter/X",
+    "url": "https://twitter.com/aurifexchandra",
+    "icon": "fab fa-twitter"
+  },
+  {
+    "name": "YouTube",
+    "url": "https://www.youtube.com/@AurifexChandra",
+    "icon": "fab fa-youtube"
+  }
+]
